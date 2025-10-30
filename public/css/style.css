@@ -1,12 +1,72 @@
+:root{
+    --navbar-height: 64px;
+    --sidebar-width: 240px;
+}
 html, body{
         width: 100%;
         height: 100%;
         padding: 0;
         margin:0;
-        overflow: hidden;
+        overflow-x: hidden;
+        overflow-y: auto;
         font-family: Helvetica;
     }
+body.tree-page{
+    overflow: hidden;
+}
 #tree{
     width:100%;
-    height:100%;
+    height:calc(100% - var(--navbar-height));
+    margin-top:var(--navbar-height); /* keep FamilyTree UI clear of fixed navbar */
+}
+
+.admin-layout{
+    margin-top:var(--navbar-height);
+    min-height:calc(100vh - var(--navbar-height));
+}
+
+.admin-sidebar{
+    width:var(--sidebar-width);
+    background-color:#212529;
+    color:#f8f9fa;
+    position:fixed;
+    top:var(--navbar-height);
+    left:0;
+    bottom:0;
+    overflow-y:auto;
+    padding:1.5rem 1rem;
+}
+
+.admin-sidebar .list-group-item{
+    background-color:transparent;
+    color:#f8f9fa;
+    border:0;
+    padding:0.75rem 1rem;
+}
+
+.admin-sidebar .list-group-item.active{
+    background-color:#343a40;
+    border-radius:0.5rem;
+}
+
+.admin-main{
+    margin-left:var(--sidebar-width);
+    padding:2rem;
+    margin-top:var(--navbar-height);
+    min-height:calc(100vh - var(--navbar-height));
+    background-color:#f8f9fa;
+}
+
+@media (max-width: 991.98px){
+    .admin-sidebar{
+        position:static;
+        width:100%;
+        border-radius:0;
+    }
+    .admin-main{
+        margin-left:0;
+        margin-top:1rem;
+        min-height:auto;
+        padding:1.5rem 1rem;
+    }
 }

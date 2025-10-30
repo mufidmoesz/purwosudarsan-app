@@ -20,7 +20,7 @@ class FamilyController extends Controller
             'mid'    => $person->mother_id,
             'fid'    => $person->father_id,
             'gender' => $person->gender,
-            'photo'  => $person->photo_url,
+            'photo'  => $this->resolvePhoto($person->photo_url),
             'name'   => $person->name,
             'born'   => $person->birth_date,
             'email'  => $person->email,
@@ -47,9 +47,31 @@ class FamilyController extends Controller
 
     private function getPartnerIds($personId)
     {
-        return DB::table('spouses')
+        $asPerson = DB::table('spouses')
             ->where('person_id', $personId)
-            ->pluck('spouse_id')
+            ->pluck('spouse_id');
+
+        $asPartner = DB::table('spouses')
+            ->where('spouse_id', $personId)
+            ->pluck('person_id');
+
+        return $asPerson
+            ->merge($asPartner)
+            ->unique()
+            ->values()
             ->toArray();
+    }
+
+    private function resolvePhoto(?string $photo): ?string
+    {
+        if (!$photo) {
+            return null;
+        }
+
+        if (filter_var($photo, FILTER_VALIDATE_URL)) {
+            return $photo;
+        }
+
+        return asset('storage/' . ltrim($photo, '/'));
     }
 }

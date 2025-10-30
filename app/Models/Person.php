@@ -16,10 +16,12 @@ class Person extends Model
         'gender',
         'photo_url',
         'birth_date',
+        'death_date',
         'email',
         'phone',
         'city',
         'country',
+        'notes',
     ];
 
     public function mother()

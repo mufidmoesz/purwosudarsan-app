@@ -18,4 +18,9 @@ class Spouse extends Model
     {
         return $this->belongsTo(Person::class, 'person_id');
     }
+
+    public function partner()
+    {
+        return $this->belongsTo(Person::class, 'spouse_id');
+    }
 }
