@@ -21,6 +21,7 @@ class FamilyController extends Controller
             'fid'    => $person->father_id,
             'gender' => $person->gender,
             'photo'  => $this->resolvePhoto($person->photo_url),
+            'img'    => $this->resolvePhoto($person->photo_url),
             'name'   => $person->name,
             'born'   => $person->birth_date,
             'email'  => $person->email,

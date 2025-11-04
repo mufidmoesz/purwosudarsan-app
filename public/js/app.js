@@ -14,36 +14,36 @@ document.addEventListener("DOMContentLoaded", function () {
         template: 'hugo',
         roots: [1],
         nodeMenu: {
-            edit: { text: 'Edit' },
+            // edit: { text: 'Edit' },
             details: { text: 'Details' },
         },
-        nodeTreeMenu: true,
+        // nodeTreeMenu: true,
         nodeBinding: {
             field_0: 'name',
             field_1: 'born',
             img_0: 'photo'
         },
-        editForm: {
-            titleBinding: "name",
-            photoBinding: "photo",
-            addMoreBtn: 'Add element',
-            addMore: 'Add more elements',
-            addMoreFieldName: 'Element name',
-            generateElementsFromFields: false,
-            elements: [
-                { type: 'textbox', label: 'Full Name', binding: 'name' },
-                { type: 'textbox', label: 'Email Address', binding: 'email' },
-                [
-                    { type: 'textbox', label: 'Phone', binding: 'phone' },
-                    { type: 'date', label: 'Date Of Birth', binding: 'born' }
-                ],
-                [
-                    { type: 'textbox', label: 'Country', binding: 'country' },
-                    { type: 'textbox', label: 'City', binding: 'city' },
-                ],
-                { type: 'textbox', label: 'Photo Url', binding: 'photo', btn: 'Upload' },
-            ]
-        },
+        // editForm: {
+        //     titleBinding: "name",
+        //     photoBinding: "photo",
+        //     addMoreBtn: 'Add element',
+        //     addMore: 'Add more elements',
+        //     addMoreFieldName: 'Element name',
+        //     generateElementsFromFields: false,
+        //     elements: [
+        //         { type: 'textbox', label: 'Full Name', binding: 'name' },
+        //         { type: 'textbox', label: 'Email Address', binding: 'email' },
+        //         [
+        //             { type: 'textbox', label: 'Phone', binding: 'phone' },
+        //             { type: 'date', label: 'Date Of Birth', binding: 'born' }
+        //         ],
+        //         [
+        //             { type: 'textbox', label: 'Country', binding: 'country' },
+        //             { type: 'textbox', label: 'City', binding: 'city' },
+        //         ],
+        //         { type: 'textbox', label: 'Photo Url', binding: 'photo', btn: 'Upload' },
+        //     ]
+        // },
     });
 
     family.on('field', function (sender, args) {

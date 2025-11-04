@@ -261,12 +261,12 @@ var FamilyTree = function (e, t) {
             generateElementsFromFields: !0,
             focusBinding: null,
             buttons: {
-                edit: {
-                    icon: FamilyTree.icon.edit(24, 24, "#fff"),
-                    text: "Edit",
-                    hideIfEditMode: !0,
-                    hideIfDetailsMode: !1,
-                },
+                // edit: {
+                //     icon: FamilyTree.icon.edit(24, 24, "#fff"),
+                //     text: "Edit",
+                //     hideIfEditMode: !0,
+                //     hideIfDetailsMode: !1,
+                // },
                 share: {
                     icon: FamilyTree.icon.share(24, 24, "#fff"),
                     text: "Share",
@@ -275,11 +275,11 @@ var FamilyTree = function (e, t) {
                     icon: FamilyTree.icon.pdf(24, 24, "#fff"),
                     text: "Save as PDF",
                 },
-                remove: {
-                    icon: FamilyTree.icon.remove(24, 24, "#fff"),
-                    text: "Remove",
-                    hideIfDetailsMode: !0,
-                },
+                // remove: {
+                //     icon: FamilyTree.icon.remove(24, 24, "#fff"),
+                //     text: "Remove",
+                //     hideIfDetailsMode: !0,
+                // },
             },
             elements: [],
         },
