@@ -25,7 +25,10 @@
         >
             <i class="bi bi-heart me-2"></i> Manage Spouses
         </a>
-        <a href="#" class="list-group-item list-group-item-action disabled">
+        <a
+            href="{{ route('admin.articles.index') }}"
+            class="list-group-item list-group-item-action {{ request()->routeIs('admin.articles.*') ? 'active' : '' }}"
+        >
             <i class="bi bi-journal-text me-2"></i> Manage Articles
         </a>
     </div>

@@ -17,10 +17,10 @@
         <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
             <ul class="navbar-nav me-auto mb-2 mb-md-0">
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="{{ route('tree') }}">Family Tree</a>
+                    <a class="nav-link text-light" href="{{ route('tree') }}">Silsilah Keluarga</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="{{ url('/articles') }}">Articles</a>
+                    <a class="nav-link text-light" href="{{ route('articles.index') }}">Artikel</a>
                 </li>
             </ul>
         </div>
