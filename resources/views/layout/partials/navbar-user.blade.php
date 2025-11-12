@@ -22,6 +22,9 @@
                 <li class="nav-item">
                     <a class="nav-link text-light" href="{{ route('articles.index') }}">Artikel</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="{{ route('agendas.index') }}">Agenda</a>
+                </li>
             </ul>
         </div>
     </div>

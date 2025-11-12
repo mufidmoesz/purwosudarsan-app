@@ -31,5 +31,11 @@
         >
             <i class="bi bi-journal-text me-2"></i> Manage Articles
         </a>
+        <a
+            href="{{ route('admin.agendas.index') }}"
+            class="list-group-item list-group-item-action {{ request()->routeIs('admin.agendas.*') ? 'active' : '' }}"
+        >
+            <i class="bi bi-calendar-event me-2"></i> Manage Agendas
+        </a>
     </div>
 </nav>

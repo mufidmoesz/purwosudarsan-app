@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\FamilyController;
 use App\Http\Controllers\PersonController;
 use App\Http\Controllers\PublicArticleController;
+use App\Http\Controllers\PublicAgendaController;
 use App\Http\Controllers\SpouseController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,6 +18,7 @@ Route::get('/family-data', [FamilyController::class, 'getFamilyData']);
 
 Route::get('/articles', [PublicArticleController::class, 'index'])->name('articles.index');
 Route::get('/articles/{article}', [PublicArticleController::class, 'show'])->name('articles.show');
+Route::get('/agendas', [PublicAgendaController::class, 'index'])->name('agendas.index');
 
 Route::middleware('guest')->group(function () {
     Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
@@ -33,5 +36,6 @@ Route::middleware('auth')->group(function () {
         Route::resource('people', PersonController::class)->except('show');
         Route::resource('spouses', SpouseController::class)->except('show');
         Route::resource('articles', ArticleController::class)->except('show');
+        Route::resource('agendas', AgendaController::class)->except('show');
     });
 });
